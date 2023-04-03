@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konversi Suhu"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/kelompok"
+        android:layout_below="@id/judul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/kiri"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+            <TextView
+                android:id="@+id/suhu_asal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="20sp"
+                android:text="Suhu Asal :"/>
+
+            <TextView
+                android:id="@+id/suhu_tujuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suhu Tujuan :"
+                android:textSize="20sp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/suhu_asal"/>
+
+            <TextView
+                android:id="@+id/suhu_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suhu_tujuan"
+                android:layout_alignParentRight="true"
+                android:text="Suhu Inputan :"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/suhu_konversi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suhu Konversi :"
+                android:layout_alignParentRight="true"
+                android:textSize="20sp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/suhu_input"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/kanan"
+            android:layout_toRightOf="@id/kiri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/spinnerAsal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:scrollbarSize="20dp"
+                android:layout_marginTop="3dp"
+                android:entries="@array/suhu_array"/>
+
+            <Spinner
+                android:id="@+id/spinnerTujuan"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/spinnerAsal"
+                android:scrollbarSize="20dp"
+                android:entries="@array/suhu_array"/>
+
+            <EditText
+                android:id="@+id/editTextInputan"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Masukkan suhu"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/spinnerTujuan"/>
+
+            <EditText
+                android:id="@+id/editTextKonversi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Hasil konversi"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/editTextInputan"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonHitungKonversi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hitung Konversi"
+        android:layout_below="@id/kelompok"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KonversiSuhuActivity</string>
+    <string-array name="suhu_array">
+        <item>Fahrenheit</item>
+        <item>Celcius</item>
+        <item>Kelvin</item>
+    </string-array>
+</resources>
